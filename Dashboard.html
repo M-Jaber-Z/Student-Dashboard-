@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>myweb</title>
+    <style>
+    body{
+     background-color: lightblue;
+    }
+   input{
+     width: 90%;
+     margin: 10px;
+     padding: 5px;
+     border-radius: 20px;
+   }
+   button{
+     padding: 5px;
+     background-color: red;
+     color: white;
+     border: none;
+     border-radius: 20px;
+     font-weight: bold;
+   }
+   h2{
+     text-align: center;
+   }
+    </style>
+  </head>
+  <body>
+    <h2>welcome to student Dashboard<h2>
+    <input id="name" type="text" placeholder="Enter your name">
+    <input id="school" type="text"placeholder=" Enter your school">
+    <input id="math"type="number"placeholder=" score for math">
+    <input id="sience" type="number"placeholder=" score for sience">
+    <input id="English" type="number"placeholder="score for English"><br>
+    <button onclick="main()">Generate Report</button>
+    <p id="show"></p>
+    <h1 id="grade"></h1>
+    <h2 id="final"></h2>
+    <h3 id="avg"></h3>
+   <script>
+     const main = ()=>{
+       let a =document.getElementById('name').value;
+       let b = document.getElementById('school').value;
+       let c = Number(document.getElementById('math').value);
+       let d =Number( document.getElementById('sience').value);
+       let e =Number(document.getElementById('English').value);
+       document.getElementById('show').innerHTML = "Hi "  + a +  " you are from " + b + " high school " + " and your math score is " + c + " and your sience score is " + d + " your english score is " + e;
+       let total = Number(c+d+e);
+       let avg = total / 3;
+       if (avg >= 95) {
+       document.getElementById('grade').innerHTML = "Grade A+ "
+     }else if (avg >= 90) {
+       document.getElementById('grade').innerHTML = "Grade A"
+     }else if(avg >= 80){
+       document.getElementById('grade').innerHTML = "Grade B"
+     }else {
+       document.getElementById('grade').innerHTML = "Grade C"
+     }
+       document.getElementById('final').innerHTML = "Total:" + total;
+     };
+   </script>
+  </body>
+</html>
